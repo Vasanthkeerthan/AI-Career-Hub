@@ -25,9 +25,10 @@
     "natural": "^8.1.1",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
-    "pdf-parse": "^2.4.5",
+    "pdf-parse": "^1.1.1",
     "resend": "^6.12.4",
-    "socket.io": "^4.8.3"
+    "socket.io": "^4.8.3",
+    "tesseract.js": "^7.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"

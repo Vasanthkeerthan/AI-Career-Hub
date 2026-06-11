@@ -39,13 +39,29 @@ const resumeSchema = new mongoose.Schema(
       default: 0,
     },
 
+    extractedSkills: [String],
+
+    education: [String],
+
+    experience: {
+      type: String,
+      default: "",
+    },
+
+    resumeStrength: {
+      type: Number,
+      default: 0,
+    },
+
     atsScore: {
       type: Number,
       default: 0,
     },
 
     matchedSkills: [String],
+
     missingSkills: [String],
+
     suggestions: [String],
   },
   {
@@ -53,4 +69,7 @@ const resumeSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Resume", resumeSchema);
+module.exports = mongoose.model(
+  "Resume",
+  resumeSchema
+);

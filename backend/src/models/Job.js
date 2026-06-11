@@ -60,11 +60,31 @@ const jobSchema = new mongoose.Schema(
     },
 
     applicants: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+
+    status: {
+      type: String,
+      enum: [
+        "Applied",
+        "Under Review",
+        "Shortlisted",
+        "Interview Scheduled",
+        "Rejected",
+        "Hired",
+      ],
+      default: "Applied",
+    },
+
+    appliedAt: {
+      type: Date,
+      default: Date.now,
+    },
+  },
+],
 
     isActive: {
       type: Boolean,

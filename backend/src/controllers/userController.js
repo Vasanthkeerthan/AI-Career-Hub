@@ -46,7 +46,11 @@ const updateProfile = async (req, res) => {
     user.country = country || user.country;
     user.city = city || user.city;
     user.about = about || user.about;
-    user.skills = skills || user.skills;
+    if (skills) {
+     user.skills = Array.isArray(skills)
+       ? skills
+       : skills.split(",").map(skill => skill.trim());
+}
     user.githubUrl = githubUrl || user.githubUrl;
     user.linkedinUrl = linkedinUrl || user.linkedinUrl;
     user.portfolioUrl = portfolioUrl || user.portfolioUrl;
